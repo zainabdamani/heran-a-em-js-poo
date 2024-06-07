@@ -23,7 +23,7 @@
             }
 
             linguagemEntidade(lingua) {
-                console.log(`a lingua do livro é ${this.#lingua}`)
+                console.log(`a lingua é ${this.#lingua}`)
             }
 
             editoraEntidade(editora){
@@ -46,7 +46,7 @@
             }
 
             tipoDeLivro(tipoDeLivro){
-            console.log(`o genero do livro é ${this.#tipoDeLivro}`)
+            console.log(`o tipo do livro é ${this.#tipoDeLivro}`)
             }
         }
 
@@ -69,7 +69,7 @@
             }
 
             mancheteJornal(manchete){
-                console.log(`manchete do livro é ${this.#manchete}`)
+                console.log(`manchete do jornal é ${this.#manchete}`)
             }
 
             tipoCharge(charge){
@@ -96,9 +96,18 @@
         }
 
 
-        dostoievski = new Livro(125, "russo", "editora penguim", "classico literario");
-        dostoievski.paginaEntidade();
+        dostoievski = new Livro(125, "russo", "editora penguim", "classico literario", "capa dura");
+        exame = new Revista(15, "portugues", "alguma editora")
+        gazeta = new Jornal(30, "portugues", "folha", "RACHA E CORRUPÇÃO - JOVENS DE FOZ FAZEM PEGAS NAS RUAS DE CDE SOB CONIVENCIA DE POLICIAIS", "mafalda", "cada do jardim lindoia a venda")
+        turmaDaMonica = new HistoriaEmQuadrinhos(60, "portugues", "saopaulo", "mauricio de sousa")
+
+        dostoievski.tipoDeLivro();
         dostoievski.generoLivro();
+        exame.linguagemEntidade();
+        gazeta.mancheteJornal();
+        gazeta.tipoCharge();
+        gazeta.tipoClassificados();
+        turmaDaMonica.autorHQ();
 
     </script>
 </body>
