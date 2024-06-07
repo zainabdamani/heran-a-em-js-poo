@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class EntidadeBibliografica {
+            #quantidade;
+            #lingua;
+            #editora;
+
+            constructor (quantidade, lingua, editora){
+                this.#quantidade = quantidade;
+                this.#lingua = lingua;
+                this.#editora = editora;
+            }
+
+            paginaEntidade(quantidade){
+                console.log(`a quantidade de paginas é ${this.#quantidade}`)
+            }
+
+            linguagemEntidade(lingua) {
+                console.log(`a lingua do livro é ${this.#lingua}`)
+            }
+
+            editoraEntidade(editora){
+                console.log(`a editora é ${this.#editora}`)
+            }
+
+        }
+
+        class Livro extends EntidadeBibliografica {
+            #genero;
+            #tipoDeLivro;
+            constructor (quantidade, lingua, editora, genero, tipoDeLivro) {
+                super(quantidade, lingua, editora)
+                this.#genero = genero;
+                this.#tipoDeLivro = tipoDeLivro;
+            }
+
+            generoLivro(genero){
+                console.log(`o genero do livro é ${this.#genero}`)
+            }
+
+            tipoDeLivro(tipoDeLivro){
+            console.log(`o genero do livro é ${this.#tipoDeLivro}`)
+            }
+        }
+
+        class Revista extends EntidadeBibliografica {
+            constructor (quantidade, lingua, editora) {
+                super(quantidade, lingua, editora)
+            }
+
+        }
+
+        class Jornal extends EntidadeBibliografica {
+            #manchete;
+            #charge;
+            #classificados;
+            constructor (quantidade, lingua, editora, manchete, charge, classificados) {
+                super(quantidade, lingua, editora);
+                this.#manchete = manchete;
+                this.#charge = charge;
+                this.#classificados = classificados;
+            }
+
+            mancheteJornal(manchete){
+                console.log(`manchete do livro é ${this.#manchete}`)
+            }
+
+            tipoCharge(charge){
+            console.log(`charge do jornal é ${this.#charge}`)
+            }
+
+            tipoClassificados(classificados){
+                console.log(`classificado do jornal é ${this.#classificados}`)
+                } 
+
+        }
+
+        class HistoriaEmQuadrinhos extends EntidadeBibliografica {
+            #autor;
+            constructor (quantidade, lingua, editora, autor) {
+                super(quantidade, lingua, editora);
+                this.#autor = autor;
+            }
+
+            autorHQ(autor){
+                console.log(`autor da HQ é ${this.#autor}`)
+            }
+
+        }
+
+
+        dostoievski = new Livro(125, "russo", "editora penguim", "classico literario");
+        dostoievski.paginaEntidade();
+        dostoievski.generoLivro();
+
+    </script>
+</body>
+</html>
